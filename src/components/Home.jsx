@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import Parking from "../assets/services/parking.png"
 import Licencing from "../assets/services/licensing.png"
@@ -9,7 +9,6 @@ import Health from "../assets/services/healthcare.png"
 import Adverts from "../assets/services/adverts.png"
 import Property from "../assets/services/property.png"
 import Others from "../assets/services/others.png"
-import Login from './Login';
 
 
 const services = [
@@ -90,7 +89,6 @@ const Services = () => {
 };
 
 const Home = () => {
-    const navigate = useNavigate();
     return (
         <>
             <div className="bg-gray-100 min-h-screen">

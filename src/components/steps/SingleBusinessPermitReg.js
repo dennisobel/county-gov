@@ -7,6 +7,7 @@ import BusinessCategory from "./BusinessCategory";
 import BusinessDetails from "./BusinessDetails";
 import BusinessActivity from "./BusinessActivity";
 import BusinessContacts from "./BusinessContacts";
+import Review from "../../components/steps/Review";
 import Final from "../../components/steps/Final";
 
 function SingleBusinessPermitReg() {
@@ -17,7 +18,8 @@ function SingleBusinessPermitReg() {
     "Business Details",
     "Business Activity Information",
     "Business Contacts",
-    "Review & Submit"
+    "Review & Submit",
+    "Final",
   ];
 
   const displayStep = (step) => {
@@ -31,6 +33,8 @@ function SingleBusinessPermitReg() {
       case 4:
         return <BusinessContacts />;
       case 5:
+        return <Review />;
+      case 6:
         return <Final />;
       default:
     }
@@ -49,7 +53,7 @@ function SingleBusinessPermitReg() {
       <div className="horizontal container mt-5 ">
         <div className="text-center">
           <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">
-          Single Business Permit Application
+            Single Business Permit Application
           </p>
         </div>
         <Stepper steps={steps} currentStep={currentStep} />

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { links } from "./Mylinks";
 
 const NavLinks = () => {
