@@ -3,30 +3,34 @@ import Stepper from "../../components/Stepper";
 import StepperControl from "../../components/StepperControl";
 import { UseContextProvider } from "../../contexts/StepperContext";
 
-import Account from "../../components/steps/Account";
-import Details from "../../components/steps/Details";
-import Payment from "../../components/steps/Payment";
+import BusinessCategory from "./BusinessCategory";
+import BusinessDetails from "./BusinessDetails";
+import BusinessActivity from "./BusinessActivity";
+import BusinessContacts from "./BusinessContacts";
 import Final from "../../components/steps/Final";
 
 function SingleBusinessPermitReg() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
-    "Account Information",
-    "Personal Details",
-    "Payment",
-    "Complete",
+    "Business Category",
+    "Business Details",
+    "Business Activity Information",
+    "Business Contacts",
+    "Review & Submit"
   ];
 
   const displayStep = (step) => {
     switch (step) {
       case 1:
-        return <Account />;
+        return <BusinessCategory />;
       case 2:
-        return <Details />;
+        return <BusinessDetails />;
       case 3:
-        return <Payment />;
+        return <BusinessActivity />;
       case 4:
+        return <BusinessContacts />;
+      case 5:
         return <Final />;
       default:
     }
