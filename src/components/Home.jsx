@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 
 import Parking from "../assets/services/parking.png"
 import Licencing from "../assets/services/licensing.png"
@@ -93,10 +93,6 @@ const Home = () => {
     const navigate = useNavigate();
     return (
         <>
-            <Routes>
-                <Route path="/login" element={<Login />} />
-                {/* <Route path="/" element={<Home />} /> */}
-            </Routes>
             <div className="bg-gray-100 min-h-screen">
                 <div className="container mx-auto px-4 py-16">
                     <div className="flex items-center justify-center">
@@ -111,13 +107,12 @@ const Home = () => {
                                     enjoy paying for County services online.
                                 </p>
                                 <div className="flex justify-center">
-                                    <a
-                                        href=""
-                                        onClick={() => {navigate('/login'); return false}}
-                                        className="bg-green-500 hover:bg-green-600 text-primary font-bold py-3 px-8 rounded-full text-lg"
-                                    >
-                                        <i className="mdi mdi-account-outline mr-2"></i>Sign In / Sign Up
-                                    </a>
+                                    
+                                        <Link to="/login" className="bg-green-500 hover:bg-green-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
+                                            <i className="mdi mdi-account-outline mr-2"></i>Sign In / Sign Up
+                                        </Link>
+                                        
+                                    
                                     {/* <a
                                         href="/signup"
                                         className="bg-green-500 hover:bg-green-600 text-primary font-bold py-3 px-8 rounded-full text-lg"

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom"
 import Stepper from "./components/Stepper";
 import StepperControl from "./components/StepperControl";
 import { UseContextProvider } from "./contexts/StepperContext";
@@ -9,6 +10,8 @@ import Payment from "./components/steps/Payment";
 import Final from "./components/steps/Final";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home"
+import SingleBusinessPermitReg from "./components/steps/SingleBusinessPermitReg";
+import Login from "./components/Login";
 
 function App() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -43,32 +46,15 @@ function App() {
   };
 
   return (
-    <section
-    className="h-screen bg-Hero bg-cover
-    font-[Poppins] md:bg-top bg-center"
-    >
-      <Navbar />
-      <Home/>
-      {/* <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
-        
-        <div className="horizontal container mt-5 ">
-          <Stepper steps={steps} currentStep={currentStep} />
-
-          <div className="my-10 p-10 ">
-            <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
-          </div>
-        </div>
-
-        
-        {currentStep !== steps.length && (
-          <StepperControl
-            handleClick={handleClick}
-            currentStep={currentStep}
-            steps={steps}
-          />
-        )}
-      </div> */}
-    </section>
+    <>
+    
+      <Navbar/>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/SingleBusinessPermitReg" element={<SingleBusinessPermitReg />} />
+      </Routes>
+    </>
   );
 }
 

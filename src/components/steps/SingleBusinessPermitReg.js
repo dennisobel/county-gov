@@ -41,25 +41,28 @@ function SingleBusinessPermitReg() {
   };
 
   return (
-      <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
-        
-        <div className="horizontal container mt-5 ">
-          <Stepper steps={steps} currentStep={currentStep} />
-
-          <div className="my-10 p-10 ">
-            <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
-          </div>
+    <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
+      <div className="horizontal container mt-5 ">
+        <div className="text-center">
+          <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">
+          Single Business Permit Application
+          </p>
         </div>
+        <Stepper steps={steps} currentStep={currentStep} />
 
-        
-        {currentStep !== steps.length && (
-          <StepperControl
-            handleClick={handleClick}
-            currentStep={currentStep}
-            steps={steps}
-          />
-        )}
+        <div className="my-10 p-10 ">
+          <UseContextProvider>{displayStep(currentStep)}</UseContextProvider>
+        </div>
       </div>
+
+      {currentStep !== steps.length && (
+        <StepperControl
+          handleClick={handleClick}
+          currentStep={currentStep}
+          steps={steps}
+        />
+      )}
+    </div>
   );
 }
 

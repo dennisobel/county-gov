@@ -1,17 +1,12 @@
 import React, { useState } from "react";
 import { Routes, Route, useNavigate, Link } from 'react-router-dom';
-import SingleBusinessPermitReg from "../steps/SingleBusinessPermitReg";
 import { links } from "./Mylinks";
 
 const NavLinks = () => {
   const [heading, setHeading] = useState("");
   const [subHeading, setSubHeading] = useState("");
-  const navigate = useNavigate();
   return (
     <>
-      <Routes>
-        <Route path="/SingleBusinessPermitReg" element={<SingleBusinessPermitReg />} />
-      </Routes>
       {links.map((link) => (
         <div>
           <div className="px-3 text-left md:cursor-pointer group">
