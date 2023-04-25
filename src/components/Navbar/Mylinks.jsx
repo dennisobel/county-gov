@@ -22,7 +22,7 @@ export const links = [
       {
         Head: "Business Licencing",
         sublink: [
-          { name: "Single Business Permits", link: "/" },
+          { name: "Single Business Permits", link: "/SingleBusinessPermitReg" },
           { name: "Weight & Measures", link: "/" },
           { name: "Betting & Gaming", link: "/" },
         ],
