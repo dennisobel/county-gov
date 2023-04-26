@@ -11,7 +11,7 @@ export default function BusinessCategory() {
   return (
     <>
       <div className="text-center">
-        <p className="text-gray-700 text-lg mb-1 text-4xl font-bold">
+        <p className="text-gray-700 text-lg mb- text-4xl font-bold">
           Business Category
         </p>
       </div>
@@ -34,7 +34,7 @@ export default function BusinessCategory() {
           <div className="mt-3 h-6 text-xs font-bold uppercase leading-8 text-gray-500">
             Application Type
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white ">
+          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
@@ -65,7 +65,7 @@ export default function BusinessCategory() {
           <div className="mt-3 h-6 text-xs font-bold uppercase leading-8 text-gray-500">
             Is your business already registered
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white ">
+          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}

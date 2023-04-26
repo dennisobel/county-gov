@@ -68,7 +68,7 @@ export default function BusinessDetails() {
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">
             Select sub-county
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white ">
+          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
@@ -102,7 +102,7 @@ export default function BusinessDetails() {
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">
             Select ward
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white ">
+          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
