@@ -15,11 +15,6 @@ export default function BusinessContacts() {
           Business Contacts
         </p>
       </div>
-      <div className="text-center">
-        <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">
-          Business Contacts
-        </p>
-      </div>
 
       <div className="flex flex-col md:flex-row">
         <div className="w-full mx-2 flex-1">

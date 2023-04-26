@@ -19,7 +19,7 @@ export default function BusinessActivity() {
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase mb-1">
             Select business category
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white relative mb-1">
+          <div className="my-2 flex rounded border border-gray-200 bg-white  mb-1">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
@@ -49,7 +49,7 @@ export default function BusinessActivity() {
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">
             Select business sub-category
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
+          <div className="my-2 flex rounded border border-gray-200 bg-white ">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
