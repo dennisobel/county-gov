@@ -120,7 +120,7 @@ const Home = () => {
                                 </div>
                             </div>
                             <div className="mt-12 md:mt-16">
-                                <div className="relative rounded-full overflow-hidden">
+                                <div className="rounded-full overflow-hidden">
                                     <input
                                         type="text"
                                         name="search"
