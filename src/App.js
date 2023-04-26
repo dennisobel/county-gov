@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home"
 import SingleBusinessPermitReg from "./components/steps/SingleBusinessPermitReg";
 import Login from "./components/Login";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/SingleBusinessPermitReg" element={<SingleBusinessPermitReg />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
