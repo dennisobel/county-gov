@@ -14,12 +14,12 @@ function SingleBusinessPermitReg() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const steps = [
-    "Business Category",
-    "Business Details",
-    "Business Activity Information",
-    "Business Contacts",
-    "Review & Submit",
-    "Final",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
 
   const displayStep = (step) => {
@@ -49,7 +49,8 @@ function SingleBusinessPermitReg() {
   };
 
   return (
-    <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
+    // <div className="mx-auto rounded-2xl bg-white pb-2 shadow-xl md:w-1/2">
+      <div className="mx-auto rounded-2xl pb-2 shadow-xl md:w-1/2 bg-teal-10">
       <div className="horizontal container mt-5 ">
         <div className="text-center">
           <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">

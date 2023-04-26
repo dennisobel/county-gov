@@ -45,7 +45,9 @@ export default function BusinessActivity() {
       ],
     },
   ];
-  const [isAccordionOpen, setIsAccordionOpen] = useState(Array(review.length).fill(false));
+  const [isAccordionOpen, setIsAccordionOpen] = useState(
+    Array(review.length).fill(false)
+  );
 
   const handleAccordionClick = (index) => {
     const newAccordionOpen = [...isAccordionOpen];
@@ -55,8 +57,13 @@ export default function BusinessActivity() {
 
   return (
     <>
+      <div className="text-center">
+        <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">
+          Review & Submit
+        </p>
+      </div>
       <div className="flex flex-col">
-        {review.map((item,index) => {
+        {review.map((item, index) => {
           return (
             <div className="w-full mx-2" key={index}>
               <button
@@ -74,7 +81,7 @@ export default function BusinessActivity() {
               </button>
               {isAccordionOpen[index] && (
                 <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
-                  {item.fields.map((field,index) => {
+                  {item.fields.map((field, index) => {
                     return (
                       <div className="" key={index}>
                         <div className="w-full mx-2 flex-1">

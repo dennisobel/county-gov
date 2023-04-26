@@ -9,6 +9,11 @@ export default function BusinessDetails() {
   };
   return (
     <>
+      <div className="text-center">
+        <p className="text-gray-700 text-lg mb-8 text-4xl font-bold">
+          Business Details
+        </p>
+      </div>
       <div className="flex flex-col md:flex-row">
         <div className="w-full mx-2 flex-1">
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">

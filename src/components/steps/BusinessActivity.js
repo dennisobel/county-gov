@@ -9,12 +9,17 @@ export default function BusinessActivity() {
   };
   return (
     <>
+      <div className="text-center">
+        <p className="text-gray-700 text-lg mb-1 text-4xl font-bold">
+          Business Activity & Information
+        </p>
+      </div>
       <div className="flex flex-col md:flex-row">
         <div className="w-full mx-2 flex-1">
-          <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">
+          <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase mb-1">
             Select business category
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
+          <div className="my-2 flex rounded border border-gray-200 bg-white relative mb-1">
             <select
               onChange={handleChange}
               value={userData["applicationType"] || ""}
