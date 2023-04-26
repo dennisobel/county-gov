@@ -21,6 +21,9 @@ const Navbar = () => {
             </Link>
           </li>
           <NavLinks />
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
         </ul>
         <div className="md:block hidden">
           <Button />
