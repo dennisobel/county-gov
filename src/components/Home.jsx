@@ -63,7 +63,7 @@ const Services = () => {
                     {services.map((service) => (
                         <a
                             key={service.id}
-                            href="/signup"
+                            href="/login"
                             className="block bg-white rounded-lg shadow-lg overflow-hidden hover:bg-gray-100 hover:shadow-xl focus:bg-gray-100 transition duration-300 ease-in-out cursor-pointer"
                         >
                             <div
@@ -106,13 +106,13 @@ const Home = () => {
                                 </p>
                                 <div className="flex justify-center">
                                     
-                                        <Link to="/signup" className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
+                                        <Link to="/login" className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
                                             <i className="mdi mdi-account-outline mr-2"></i>Sign In / Sign Up
                                         </Link>
                                         
                                     
                                     {/* <a
-                                        href="/signup"
+                                        href="/login"
                                         className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg"
                                     >
                                         <i className="mdi mdi-account-plus mr-2"></i>Create account
