@@ -69,6 +69,14 @@ function App() {
         path: "/signup",
         element: <Signup />,
       },
+      {
+        path: "/otp",
+        element: <Otp />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      },
   ])
   return (
     // <>    
