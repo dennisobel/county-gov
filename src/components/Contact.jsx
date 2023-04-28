@@ -22,7 +22,7 @@ const Contact = () => {
 
                 {/* :MAP CONTAINER */}
                 <div className="order-1 col-span-full">
-                    <iframe src="https://maps.google.com/maps?width=738&amp;height=400&amp;hl=en&amp;q=%20+(Makueni%20County%20Headquarters)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                    <iframe src="https://maps.google.com/maps?width=738&amp;height=400&amp;hl=en&amp;q=%20+(DRS%20County%20Headquarters)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                         title="map" scrolling="no" frameborder="0"
                         width="100%" height="400px"
                         className=""
@@ -93,7 +93,7 @@ const Contact = () => {
                             mail-contact@fancycontact.com
                         </a>
                         {/* ::Address */}
-                        <p className="text-sm text-gray-500 leading-6">18 Avenue, <br /> 75008 Makueni <br /> Kenya</p>
+                        <p className="text-sm text-gray-500 leading-6">18 Avenue, <br /> 75008 DRS <br /> Kenya</p>
                         {/* ::Socials */}
                         <div className="flex items-center">
                             {/* :Twitter */}

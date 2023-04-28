@@ -75,7 +75,7 @@ export default function BusinessDetails() {
               name="subcounty"
               className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
             >
-              <option value="web">Makueni Constituency</option>
+              <option value="web">DRS Constituency</option>
               <option value="mobile">Mbooni Constituency</option>
               <option value="mobile">Kibwezi East Constituency</option>
               <option value="mobile">Kibwezi West Constituency</option>
