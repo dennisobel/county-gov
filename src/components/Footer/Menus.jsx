@@ -1,5 +1,5 @@
 export const PRODUCTS = [
-    { name: "Create an account and get to enjoy paying for Makueni County services online.", link: "#" },
+    { name: "Create an account and get to enjoy paying for DRS County services online.", link: "#" },
   ];
   export const RESOURCES = [
     { name: "Industries and tools", link: "#" },
