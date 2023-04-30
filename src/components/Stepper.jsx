@@ -6,7 +6,6 @@ const Stepper = ({ steps, currentStep }) => {
 
   const updateStep = (stepNumber, steps) => {
     const newSteps = [...steps];
-    console.log(newSteps);
     let count = 0;
     while (count < newSteps.length) {
       //current step
@@ -105,7 +104,7 @@ const Stepper = ({ steps, currentStep }) => {
   });
 
   return (
-    <div className="mx-4 p-4 flex justify-between items-center">
+    <div className="mx-1 p-4 flex justify-between items-center">
       {stepsDisplay}
     </div>
   );

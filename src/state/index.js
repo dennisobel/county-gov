@@ -1,84 +1,96 @@
-// import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, configureStore, combineReducers  } from "@reduxjs/toolkit";
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
 
-// const initialState = {
-//     mode: "dark",
-//     userId: "63701cc1f03239b7f700000e"
-// }
-
-// export const globalSlice = createSlice({
-//     name: "global",
-//     initialState,
-//     reducers: {
-//         setMode: (state) => {
-//             state.mode = state.mode === "light" ? "dark" : "light";
-//         }
-//     }
-// })
-
-// export const { setMode } = globalSlice.actions;
-
-// export default globalSlice.reducer;
-
-import { createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  signup: {
-    loading: false,
-    error: null,
-    success: false,
+const initialSignupState = {
+  userData: {
+    personalInformation: { name: '', msisdn: '', email: '' },
+    identification: { id: '', kra: '' },
+    accountInformation: { userType: '', password: '', confirmPassword: '' },
+    locationRole: { countyId: '', roleId: '' },
+    reviewAccept: { terms: '' }
   },
-  login: {
-    loading: false,
-    error: null,
-    success: false,
-  },
+  loading: false,
+  error: null,
+  success: false,
 };
 
-const authSlice = createSlice({
-  name: 'auth',
-  initialState,
+const initialOTPState = {
+  userData: {
+    otp: {
+      pin:''
+    }
+  },
+  loading: false,
+  error: null,
+  success: false,
+}
+
+const multiStepSignupSlice = createSlice({
+  name: "signup",
+  initialState: initialSignupState,
   reducers: {
-    // Signup reducers
-    signupRequest: (state) => {
-      state.signup.loading = true;
-      state.signup.error = null;
-      state.signup.success = false;
+    updatePersonalInformation: (state, action) => {
+      state.userData.personalInformation = {
+        ...state.userData.personalInformation,
+        ...action.payload,
+      };
     },
-    signupSuccess: (state) => {
-      state.signup.loading = false;
-      state.signup.error = null;
-      state.signup.success = true;
+    updateIdentification: (state, action) => {
+      state.userData.identification = {
+        ...state.userData.identification,
+        ...action.payload,
+      };
     },
-    signupFailure: (state, action) => {
-      state.signup.loading = false;
-      state.signup.error = action.payload;
-      state.signup.success = false;
+    updateAccountInformation: (state, action) => {
+      state.userData.accountInformation = {
+        ...state.userData.accountInformation,
+        ...action.payload,
+      };
     },
-    // Login reducers
-    loginRequest: (state) => {
-      state.login.loading = true;
-      state.login.error = null;
-      state.login.success = false;
+    updateLocationRole: (state, action) => {
+      state.userData.locationRole = {
+        ...state.userData.locationRole,
+        ...action.payload,
+      };
     },
-    loginSuccess: (state) => {
-      state.login.loading = false;
-      state.login.error = null;
-      state.login.success = true;
-    },
-    loginFailure: (state, action) => {
-      state.login.loading = false;
-      state.login.error = action.payload;
-      state.login.success = false;
-    },
+    updateReviewAccept: (state, action) => {
+      state.userData.reviewAccept = {
+        ...state.userData.reviewAccept,
+        ...action.payload,
+      };
+    }
   },
 });
 
+const otpSlice = createSlice({
+  name: "otp",
+  initialState: initialOTPState,
+  reducers: {
+    updateOTPInformation: (state, action) => {
+      state.userData.otp = {
+        ...state.userData.otp,
+        ...action.payload,
+      };
+    },
+  }
+})
+
 export const {
-  signupRequest,
-  signupSuccess,
-  signupFailure,
-  loginRequest,
-  loginSuccess,
-  loginFailure,
-} = authSlice.actions;
-export default authSlice.reducer;
+  updatePersonalInformation,
+  updateIdentification,
+  updateAccountInformation,
+  updateLocationRole,
+  updateReviewAccept,
+} = multiStepSignupSlice.actions;
+
+export const {
+  updateOTPInformation
+} = otpSlice.actions;
+
+const rootReducer = combineReducers({
+  multiStepSignup: multiStepSignupSlice.reducer,
+  otp: otpSlice.reducer
+});
+
+export default rootReducer

@@ -62,7 +62,7 @@ function Login() {
                 Forgot your password?{' '}
                   <Link className="font-bold text-primary-600 hover:underline dark:text-primary-500" to="/request_reset">Reset Password</Link>
               </p>
-              <button className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded-full">Login</button>
+              <button className="cursor-pointer rounded-lg bg-teal-500 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white">Login</button>
               <p className="text-sm font-bold text-gray-500 dark:text-gray-400">
                 Don't have an account?{' '}
                   <Link className="font-bold text-primary-600 hover:underline dark:text-primary-500" to="/signup">Sign up</Link>

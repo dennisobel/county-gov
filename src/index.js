@@ -4,18 +4,18 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from "./state";
+import rootReducer from "./state";
 import { Provider } from "react-redux";
 import { setupListeners } from "@reduxjs/toolkit/dist/query";
-import { authApi } from "./state/api";
+import { globalApi } from "./state/api";
 import { AuthContextProvider } from "./context/authContext";
 
 const store = configureStore({
   reducer: {
-    auth: authReducer,
-    [authApi.reducerPath]: authApi.reducer,
+    global: rootReducer,
+    [globalApi.reducerPath]: globalApi.reducer,
   },
-  middleware: (getDefault) => getDefault().concat(authApi.middleware),
+  middleware: (getDefault) => getDefault().concat(globalApi.middleware),
 });
 setupListeners(store.dispatch);
 
