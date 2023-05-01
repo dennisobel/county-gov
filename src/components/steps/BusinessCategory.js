@@ -16,7 +16,7 @@ export default function BusinessCategory() {
         </p>
       </div>
       <div className="flex flex-col ">
-        <div className="mx-2 w-full flex-1">
+        {/* <div className="mx-2 w-full flex-1">
           <div className="mt-3 h-6 text-xs font-bold uppercase leading-8 text-gray-500">
             Disclaimer
           </div>
@@ -29,7 +29,7 @@ export default function BusinessCategory() {
               card numbers, or personal identification numbers.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="mx-2 w-full flex-1">
           <div className="mt-3 h-6 text-xs font-bold uppercase leading-8 text-gray-500">
             Application Type

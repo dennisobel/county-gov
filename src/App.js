@@ -14,31 +14,32 @@ import Contact from "./components/Contact";
 import Profile from "./pages/profile/Profile"
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
+import React from "react"
 
 
 function App() {
   const {currentUser} = useContext(AuthContext);
+  const [selectedService, setSelectedService] = React.useState("");
+
+  console.log("SELECTED:",selectedService)
 
   const Layout = () => {
     return (
       <div>
         <Navbar />
         <div style={{ display: "flex" }}>
-          <LeftBar />
+          <LeftBar setSelectedService={setSelectedService}/>
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
           {/* <RightBar /> */}
         </div>
+        <Footer/>
       </div>
     );
   };
 
   const ProtectedRoute = ({ children }) => {
-    // if (!currentUser) {
-      // return <Navigate to="/login" />;
-    // }
-
     return children;
   };  
 
@@ -48,17 +49,18 @@ function App() {
         element: (
           <ProtectedRoute>
             <Layout />
+            {/* <Profile service={selectedService} /> */}
           </ProtectedRoute>
         ),
         children: [
           {
             path: "/profile",
+            element: <Profile service={selectedService} />
+          },
+          {
+            path: "/profile/:id",
             element: <Profile />,
           },
-          // {
-          //   path: "/profile/:id",
-          //   element: <Profile />,
-          // },
         ],
       },
       {
@@ -83,21 +85,6 @@ function App() {
       },
   ])
   return (
-    // <>    
-    //   <Navbar/>
-    //   <Routes>
-    //     <Route path="/" element={<Home />} />
-    //     <Route path="/signup" element={<Signup />} />
-    //     <Route path="/login" element={<Login />} />
-    //     <Route path="/otp" element={<Otp />} />
-    //     <Route path="/reset" element={<Reset />} />
-    //     <Route path="/request_reset" element={<PassResetRequest />} />
-    //     <Route path="/contact" element={<Contact />} />
-    //     <Route path="/profile" element={<Profile />} />
-    //     <Route path="/SingleBusinessPermitReg" element={<SingleBusinessPermitReg />} />
-    //   </Routes>
-    //   <Footer/>
-    // </>
     <div>
     <RouterProvider router={router} />
     </div>
