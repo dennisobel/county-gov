@@ -17,7 +17,9 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
           .confirmPassword &&
       !showPasswordMismatchToast
     ) {
-      toast.warn("Your passwords do not match. The 'NEXT' button will be disabled till you get them to match");
+      toast.warn(
+        "Your passwords do not match. The 'NEXT' button will be disabled till you get them to match"
+      );
       setShowPasswordMismatchToast(true);
     }
   }, [

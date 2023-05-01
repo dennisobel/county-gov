@@ -22,7 +22,7 @@ export default function PersonalInformation() {
         </p>
       </div>
       <div className="flex flex-col ">
-        <div className="mx-1 w-full flex-1">
+        {/* <div className="mx-1 w-full flex-1">
           <div className="mt-1 h-6 text-xs font-bold uppercase leading-8 text-gray-500">
             Disclaimer
           </div>
@@ -31,7 +31,7 @@ export default function PersonalInformation() {
               Please note that this form is for demonstration purposes only.
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="w-full mx-1 flex-1">
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">

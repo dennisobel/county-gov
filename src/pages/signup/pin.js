@@ -29,7 +29,7 @@ function Otp() {
           <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <input
               onChange={handleChange}
-              value={userData.id}
+              value={userData.pin}
               name="pin"
               placeholder="e.g 27913456"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"

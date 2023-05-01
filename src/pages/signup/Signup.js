@@ -17,15 +17,21 @@ import ReviewAccept from "./ReviewAccept";
 import Otp from "./pin";
 import Final from "./Final";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
+
+import Profile from "./../profile/Profile"
 
 function Signup() {
   const [currentStep, setCurrentStep] = useState(1);
   const { userData, setUserData } = useStepperContext();
   const state = useSelector((state) => state);
+  const navigate = useNavigate();
+
+  
 
   const steps = ["", "", "", "", "", "", ""];
+  // const steps = Array.isArray({5})
 
   const displayStep = (step) => {
     switch (step) {
@@ -59,6 +65,10 @@ function Signup() {
         state.global.multiStepSignup.userData.reviewAccept.terms === "")
     ) {
       toast.warn("Please accept the terms and conditions.");
+    }
+
+    if( newStep === 6 && direction === "next"){
+      navigate("/profile")
     }
   };
 

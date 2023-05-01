@@ -28,23 +28,23 @@ function App() {
           <div style={{ flex: 6 }}>
             <Outlet />
           </div>
-          <RightBar />
+          {/* <RightBar /> */}
         </div>
       </div>
     );
   };
 
   const ProtectedRoute = ({ children }) => {
-    if (!currentUser) {
-      return <Navigate to="/login" />;
-    }
+    // if (!currentUser) {
+      // return <Navigate to="/login" />;
+    // }
 
     return children;
   };  
 
   const router = createBrowserRouter([
       {
-        path: "/",
+        path: "/profile",
         element: (
           <ProtectedRoute>
             <Layout />
@@ -52,13 +52,13 @@ function App() {
         ),
         children: [
           {
-            path: "/",
-            element: <Home />,
-          },
-          {
-            path: "/profile/:id",
+            path: "/profile",
             element: <Profile />,
           },
+          // {
+          //   path: "/profile/:id",
+          //   element: <Profile />,
+          // },
         ],
       },
       {
@@ -76,6 +76,10 @@ function App() {
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/",
+        element: <Home />,
       },
   ])
   return (

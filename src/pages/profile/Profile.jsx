@@ -1,69 +1,68 @@
-import "./profile.scss";
-import FacebookTwoToneIcon from "@mui/icons-material/FacebookTwoTone";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import PinterestIcon from "@mui/icons-material/Pinterest";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import PlaceIcon from "@mui/icons-material/Place";
-import LanguageIcon from "@mui/icons-material/Language";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
-import Posts from "../../components/posts/Posts"
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Logo from "../../components/Logo";
 
 const Profile = () => {
+  const state = useSelector((state) => state);
+
+  const [activeTab, setActiveTab] = useState("overview");
+
+  const tabs = [
+    {
+      id: "overview",
+      label: "Overview",
+      icon: <i className="fas fa-home"></i>,
+    },
+    {
+      id: "profile",
+      label: "Profile",
+      icon: <i className="fas fa-user"></i>,
+    },
+    {
+      id: "settings",
+      label: "Settings",
+      icon: <i className="fas fa-cog"></i>,
+    },
+  ];
+
   return (
-    <div className="profile">
-      <div className="images">
-        <img
-          src="https://images.pexels.com/photos/13440765/pexels-photo-13440765.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-          alt=""
-          className="cover"
-        />
-        <img
-          src="https://images.pexels.com/photos/14028501/pexels-photo-14028501.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
-          alt=""
-          className="profilePic"
-        />
+    <div className="flex h-screen bg-gray-100">
+      {/* Side Nav */}
+      <div className="flex-shrink-0 w-64 bg-white shadow-xl">
+
+        <nav className="mt-10">
+          {tabs.map((tab) => (
+            <Link
+              to={`/profile/${tab.id}`}
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`${
+                activeTab === tab.id ? "bg-gray-200" : ""
+              } flex items-center py-2 px-6 hover:bg-gray-200 transition-colors duration-200`}
+            >
+              <span className="mr-4">{tab.icon}</span>
+              <span className="font-medium">{tab.label}</span>
+            </Link>
+          ))}
+        </nav>
       </div>
-      <div className="profileContainer">
-        <div className="uInfo">
-          <div className="left">
-            <a href="http://facebook.com">
-              <FacebookTwoToneIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
-              <InstagramIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
-              <TwitterIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
-              <LinkedInIcon fontSize="large" />
-            </a>
-            <a href="http://facebook.com">
-              <PinterestIcon fontSize="large" />
-            </a>
+
+      {/* Main Content */}
+      <div className="flex-1 flex flex-col">
+        <header className="bg-white shadow">
+          <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+            <h1 className="text-3xl font-bold text-gray-900">
+              {tabs.find((tab) => tab.id === activeTab).label}
+            </h1>
           </div>
-          <div className="center">
-            <span>Jane Doe</span>
-            <div className="info">
-              <div className="item">
-                <PlaceIcon />
-                <span>USA</span>
-              </div>
-              <div className="item">
-                <LanguageIcon />
-                <span>lama.dev</span>
-              </div>
-            </div>
-            <button>follow</button>
+        </header>
+
+        <main className="flex-1 overflow-y-auto">
+          <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            {/* Content goes here */}
           </div>
-          <div className="right">
-            <EmailOutlinedIcon />
-            <MoreVertIcon />
-          </div>
-        </div>
-      <Posts/>
+        </main>
       </div>
     </div>
   );
