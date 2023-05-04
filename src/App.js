@@ -7,7 +7,8 @@ import Login from "./pages/login/Login"
 import PassResetRequest from "./pages/forgot_pass/PassResetRequest";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
-import Otp from "./pages/otp/otp";
+// import Otp from "./pages/otp/otp";
+import Otp from "./pages/signup/pin"
 import Reset from "./pages/password_reset/Reset";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact";

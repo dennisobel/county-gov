@@ -20,15 +20,13 @@ import Final from "./Final";
 import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../components/Logo";
 
-import Profile from "./../profile/Profile"
+import Profile from "./../profile/Profile";
 
 function Signup() {
   const [currentStep, setCurrentStep] = useState(1);
   const { userData, setUserData } = useStepperContext();
   const state = useSelector((state) => state);
   const navigate = useNavigate();
-
-  
 
   const steps = ["", "", "", "", "", "", ""];
   // const steps = Array.isArray({5})
@@ -67,9 +65,13 @@ function Signup() {
       toast.warn("Please accept the terms and conditions.");
     }
 
-    if( newStep === 6 && direction === "next"){
-      navigate("/profile")
-    }
+    // if (newStep === 6 && direction === "next") {
+    //   navigate("/otp");
+    // }
+
+    // if (newStep === 7 && direction === "next") {
+    //   navigate("/profile");
+    // }
   };
 
   return (
