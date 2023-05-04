@@ -7,6 +7,9 @@ import Health from "../../assets/services/healthcare.png";
 import Adverts from "../../assets/services/adverts.png";
 import Property from "../../assets/services/property.png";
 import Others from "../../assets/services/others.png";
+import Verified from "../../assets/services/verified.png";
+import Social from "../../assets/services/connection.png";
+import Cess from "../../assets/services/tax.png";
 import Expand from "../../assets/expand-screen.png";
 import Collapse from "../../assets/collapse.png";
 
@@ -29,7 +32,9 @@ const LeftBar = ({setSelectedService}) => {
             <LeftNavItem icon={Health} name="Health" onClick={() => setSelectedService("health")}/>
             <LeftNavItem icon={Adverts} name="Adverts" onClick={() => setSelectedService("adverts")}/>
             <LeftNavItem icon={Property} name="Property" onClick={() => setSelectedService("property")}/>
-            <LeftNavItem icon={Others} name="Others" onClick={() => setSelectedService("others")}/>
+            <LeftNavItem icon={Cess} name="Cess" onClick={() => setSelectedService("cess")}/>
+            <LeftNavItem icon={Social} name="Social" onClick={() => setSelectedService("social")}/>
+            <LeftNavItem icon={Verified} name="Jitambue" onClick={() => setSelectedService("jitambue")}/>
           </>
         ) : (
           <>
@@ -40,7 +45,9 @@ const LeftBar = ({setSelectedService}) => {
             <LeftNavItem icon={Health} onClick={() => setSelectedService("health")}/>
             <LeftNavItem icon={Adverts} onClick={() => setSelectedService("adverts")}/>
             <LeftNavItem icon={Property} onClick={() => setSelectedService("property")}/>
-            <LeftNavItem icon={Others} onClick={() => setSelectedService("parking")}/>
+            <LeftNavItem icon={Cess} onClick={() => setSelectedService("cess")}/>
+            <LeftNavItem icon={Social} onClick={() => setSelectedService("social")}/>
+            <LeftNavItem icon={Verified} onClick={() => setSelectedService("jitambue")}/>
           </>
         )}
       </div>

@@ -9,13 +9,35 @@ import SeasonalParking from "../../components/county_services/Parking/SeasonalPa
 import ReservedParking from "../../components/county_services/Parking/ReservedParking";
 import Landing from "../../components/county_services/Landing";
 import SingleBusinessPermit from "../../components/county_services/Licensing/SingleBusinessPermit"
+import WeightsMeasures from "../../components/county_services/Licensing/WeightsMeasures";
+import BettingGaming from "../../components/county_services/Licensing/BettingGaming";
 
 const Profile = ({ service }) => {
   const [activeTab, setActiveTab] = useState("");
-  const [tabs, setTabs] = useState([]);
+  const [tabs, setTabs] = useState([
+    // {
+    //   id: "overview",
+    //   label: "Overview",
+    //   icon: <i className="fas fa-home"></i>,
+    // },
+    {
+      id: "daily_parking",
+      label: "Daily Parking",
+      icon: <i className="fas fa-home"></i>,
+    },
+    {
+      id: "seasonal_parking",
+      label: "Seasonal Parking",
+      icon: <i className="fas fa-home"></i>,
+    },
+    {
+      id: "reserved_parking",
+      label: "Reserved Parking",
+      icon: <i className="fas fa-home"></i>,
+    },
+  ]);
 
   useEffect(() => {
-    console.log("SERVICE IN PROFILE:",service)
     if (service === "parking") {
       setTabs(() => [
         {
@@ -52,18 +74,179 @@ const Profile = ({ service }) => {
           icon: <i className="fas fa-home"></i>,
         },
       ]);
+    } else if (service === "land") {
+      setTabs(() => [
+        {
+          id: "land_rates_bill",
+          label: "Land Rates Bill",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "ground_rent_sdr",
+          label: "Ground Rent/SDR",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "land_owner_ammendment",
+          label: "Land Owner Ammendment",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "land_survey",
+          label: "Land Survey",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "land_clearance",
+          label: "Land Clearance",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "property_development_application",
+          label: "Property Development Application",
+          icon: <i className="fas fa-home"></i>,
+        },
+           
+        
+      ])
+    } else if (service === "essential") {
+      setTabs(() => [
+        {
+          id: "fire",
+          label: "Fire/Disaster Management",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "education",
+          label: "Education",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "public_works",
+          label: "Public Works",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "admin",
+          label: "Administrative",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "agriculture",
+          label: "Agriculture",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "cooperative",
+          label: "Cooperative",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "bus_shelter_services",
+          label: "Bus Shelter Services",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    } else if(service === "health") {
+      setTabs(() => [
+        {
+          id: "ambulance",
+          label: "Ambulance Services",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "certificates",
+          label: "Health Certificates",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "others",
+          label: "Other Health Services",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    } else if(service === "adverts") {
+      setTabs(() => [
+        {
+          id: "large",
+          label: "Large Format",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "small",
+          label: "Small Format",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    } else if(service === "property") {
+      setTabs(() => [
+        {
+          id: "tenancy_application",
+          label: "Tenancy Application",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "tenancy_transfer",
+          label: "Tenancy Transfer",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    } else if(service === "cess") {
+      setTabs(() => [
+        {
+          id: "market",
+          label: "Market Cess",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "transport",
+          label: "Transport Cess",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    } else if(service === "social") {
+      setTabs(() => [
+        {
+          id: "hire_grounds",
+          label: "Hire Grounds",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "hire_halls",
+          label: "Hire Halls",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "hire_schools",
+          label: "Hire School Facilities",
+          icon: <i className="fas fa-home"></i>,
+        },
+        {
+          id: "hire_equipment",
+          label: "Hire Equipment",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
+    }else if(service === "jitambue") {
+      setTabs(() => [
+        {
+          id: "jitambue",
+          label: "Verify County Staff",
+          icon: <i className="fas fa-home"></i>,
+        },
+      ])
     }
   }, [service]);
 
   useEffect(() => {
     if (service === undefined) {
-      setActiveTab("overview");
+      setActiveTab("parking");
     }
   }, [service]);
 
   useEffect(() => {
     if (service === undefined) {
-      setActiveTab("overview");
+      setActiveTab("parking");
     }
   }, []);
 
@@ -77,10 +260,14 @@ const Profile = ({ service }) => {
   } else if (activeTab === 'reserved_parking') {
     childComponent = <ReservedParking />;
   } else if (activeTab === 'single_business_permits') {
-    childComponent = <SingleBusinessPermit/>
-  }  else {
+    childComponent = <SingleBusinessPermit />
+  } else if (activeTab === 'weights_measures') {
+    childComponent = <WeightsMeasures />
+  } else if (activeTab === 'betting_gaming') {
+    childComponent = <BettingGaming />
+  } else {
     // handle invalid `id` parameter
-    childComponent = <Landing/>
+    childComponent = <Landing />
   }
 
   return (
@@ -93,7 +280,7 @@ const Profile = ({ service }) => {
             <Link
               to={`/profile/${tab.id}`}
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={(e) => { e.preventDefault(); setActiveTab(tab.id) }}
               className={`${activeTab === tab.id ? "bg-gray-200" : ""
                 } flex items-center py-2 px-6 hover:bg-gray-200 transition-colors duration-200`}
             >
