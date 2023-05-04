@@ -25,9 +25,9 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
           </li>
         </ul>
-        <div className="md:block hidden">
+        {/* <div className="md:block hidden">
           <Button />
-        </div>
+        </div> */}
         {/* Mobile nav */}
         <ul
           className={`
@@ -41,9 +41,9 @@ const Navbar = () => {
             </Link>
           </li>
           <NavLinks />
-          <div className="py-5">
+          {/* <div className="py-5">
             <Button />
-          </div>
+          </div> */}
         </ul>
       </div>
     </nav>

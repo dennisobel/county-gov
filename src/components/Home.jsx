@@ -104,14 +104,14 @@ const Home = () => {
                                     Make payments easily and quickly. Create an account and get to
                                     enjoy paying for County services online.
                                 </p>
-                                {/* <div className="flex justify-center">
+                                <div className="flex justify-center">
                                     
-                                        <Link to="/login" className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
-                                            <i className="mdi mdi-account-outline mr-2"></i>Sign In / Sign Up
+                                        <Link to="/profile" className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
+                                            <i className="mdi mdi-account-outline mr-2"></i>My Services
                                         </Link>
                                         
                             
-                                </div> */}
+                                </div>
                             </div>
                             <div className="mt-12 md:mt-16">
                                 <div className="relative rounded-full overflow-hidden">
