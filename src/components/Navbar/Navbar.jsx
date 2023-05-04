@@ -16,8 +16,8 @@ const Navbar = () => {
         </div>
         <ul className="md:flex hidden uppercase items-center gap-8 font-[Poppins]">
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
-              Home
+            <Link to="/faq" className="py-7 px-3 inline-block">
+              FAQ
             </Link>
           </li>
           <NavLinks />
@@ -36,8 +36,8 @@ const Navbar = () => {
         `}
         >
           <li>
-            <Link to="/" className="py-7 px-3 inline-block">
-              Home
+            <Link to="/faq" className="py-7 px-3 inline-block">
+              FAQ
             </Link>
           </li>
           <NavLinks />

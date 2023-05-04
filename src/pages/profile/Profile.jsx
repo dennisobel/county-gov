@@ -43,11 +43,6 @@ import ValidateStaff from "../../components/county_services/Jitambue/ValidateSta
 const Profile = ({ service }) => {
   const [activeTab, setActiveTab] = useState("");
   const [tabs, setTabs] = useState([
-    // {
-    //   id: "overview",
-    //   label: "Overview",
-    //   icon: <i className="fas fa-home"></i>,
-    // },
     {
       id: "daily_parking",
       label: "Daily Parking",

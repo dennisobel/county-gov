@@ -58,7 +58,7 @@ const Services = () => {
     return (
         <section className="bg-gray-100 py-16">
             <div className="container mx-auto">
-                <h1 className="text-4xl font-bold mb-8 text-center">Services</h1>
+                <h1 className="text-4xl font-bold mb-8 text-center">Services FAQs</h1>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {services.map((service) => (
                         <a
@@ -104,20 +104,14 @@ const Home = () => {
                                     Make payments easily and quickly. Create an account and get to
                                     enjoy paying for County services online.
                                 </p>
-                                <div className="flex justify-center">
+                                {/* <div className="flex justify-center">
                                     
                                         <Link to="/login" className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg">
                                             <i className="mdi mdi-account-outline mr-2"></i>Sign In / Sign Up
                                         </Link>
                                         
-                                    
-                                    {/* <a
-                                        href="/login"
-                                        className="bg-teal-500 hover:bg-teal-600 text-primary font-bold py-3 px-8 rounded-full text-lg"
-                                    >
-                                        <i className="mdi mdi-account-plus mr-2"></i>Create account
-                                    </a> */}
-                                </div>
+                            
+                                </div> */}
                             </div>
                             <div className="mt-12 md:mt-16">
                                 <div className="relative rounded-full overflow-hidden">
@@ -125,7 +119,7 @@ const Home = () => {
                                         type="text"
                                         name="search"
                                         id="search"
-                                        placeholder="Want to subscribe to county news? Add your email"
+                                        placeholder="How can we help you?"
                                         className="block w-full py-4 px-4 leading-5 text-gray-800 bg-white focus:outline-none focus:shadow-outline-purple focus:border-purple-500 focus:bg-white focus:text-gray-900 sm:text-sm sm:leading-5"
                                     />
                                     <button className="absolute inset-y-0 right-0 pr-4 flex items-center">

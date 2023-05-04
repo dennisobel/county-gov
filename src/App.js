@@ -69,7 +69,7 @@ function App() {
         element: <Login />,
       },
       {
-        path: "/signup",
+        path: "/",
         element: <Signup />,
       },
       {
@@ -81,7 +81,7 @@ function App() {
         element: <Contact />,
       },
       {
-        path: "/",
+        path: "/faq",
         element: <Home />,
       },
   ])
