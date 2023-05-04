@@ -1,10 +1,10 @@
 import React from 'react'
 import { ComingSoon } from '../../ComingSoon'
 
-function Cerificates() {
+function Certificates() {
   return (
     <div><ComingSoon/></div>
   )
 }
 
-export default Cerificates
+export default Certificates

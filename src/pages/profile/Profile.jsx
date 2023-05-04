@@ -11,6 +11,34 @@ import Landing from "../../components/county_services/Landing";
 import SingleBusinessPermit from "../../components/county_services/Licensing/SingleBusinessPermit"
 import WeightsMeasures from "../../components/county_services/Licensing/WeightsMeasures";
 import BettingGaming from "../../components/county_services/Licensing/BettingGaming";
+import LandRatesBill from "../../components/county_services/Land/LandRatesBill";
+import GroundRent from "../../components/county_services/Land/GroundRent"
+import LandOwnerAmmendment from "../../components/county_services/Land/LandOwnerAmmendment"
+import LandSurvey from "../../components/county_services/Land/LandSurvey"
+import LandClearance from "../../components/county_services/Land/LandClearance"
+import PropertyDevelopmentApplication from "../../components/county_services/Land/PropertyDevelopmentApplication"
+import FireDisaster from "../../components/county_services/Essential/FireDisaster"
+import Education from "../../components/county_services/Essential/Education"
+import PublicWorks from "../../components/county_services/Essential/PublicWorks"
+import Administration from "../../components/county_services/Essential/Administration"
+import Agriculture from "../../components/county_services/Essential/Agriculture"
+import Cooperative from "../../components/county_services/Essential/Cooperative"
+import BusShelter from "../../components/county_services/Essential/BusShelter"
+import Ambulance from "../../components/county_services/Health/Ambulance"
+import Certificates from "../../components/county_services/Health/Certificates"
+import Other from "../../components/county_services/Health/Other"
+import Large from "../../components/county_services/Adverts/Large"
+import Small from "../../components/county_services/Adverts/Small"
+import TenancyApplication from "../../components/county_services/Property/TenancyApplication"
+import TenancyTransfer from "../../components/county_services/Property/TenancyTransfer"
+import Market from "../../components/county_services/Cess/Market"
+import Transport from "../../components/county_services/Cess/Transport"
+import HireEquipment from "../../components/county_services/Social/HireEquipment"
+import HireGrounds from "../../components/county_services/Social/HireGrounds"
+import HireHalls from "../../components/county_services/Social/HireHalls"
+import HireSchool from "../../components/county_services/Social/HireSchool"
+import HireStadium from "../../components/county_services/Social/HireStadium"
+import ValidateStaff from "../../components/county_services/Jitambue/ValidateStaff"
 
 const Profile = ({ service }) => {
   const [activeTab, setActiveTab] = useState("");
@@ -226,6 +254,11 @@ const Profile = ({ service }) => {
           label: "Hire Equipment",
           icon: <i className="fas fa-home"></i>,
         },
+        {
+          id: "hire_stadium",
+          label: "Hire Stadium",
+          icon: <i className="fas fa-home"></i>,
+        },
       ])
     }else if(service === "jitambue") {
       setTabs(() => [
@@ -265,6 +298,62 @@ const Profile = ({ service }) => {
     childComponent = <WeightsMeasures />
   } else if (activeTab === 'betting_gaming') {
     childComponent = <BettingGaming />
+  } else if (activeTab === 'land_rates_bill') {
+    childComponent = <LandRatesBill/>
+  } else if (activeTab === 'ground_rent_sdr') {
+    childComponent = <GroundRent/>
+  } else if (activeTab === 'land_owner_ammendment') {
+    childComponent = <LandOwnerAmmendment/>
+  } else if (activeTab === 'land_survey') {
+    childComponent = <LandSurvey/>
+  } else if (activeTab === 'land_clearance') {
+    childComponent = <LandClearance/>
+  } else if (activeTab === 'property_development_application') {
+    childComponent = <PropertyDevelopmentApplication/>
+  } else if (activeTab === 'fire') {
+    childComponent = <FireDisaster/>
+  } else if (activeTab === 'education') {
+    childComponent = <Education/>
+  } else if (activeTab === 'public_works') {
+    childComponent = <PublicWorks/>
+  } else if (activeTab === 'admin') {
+    childComponent = <Administration/>
+  } else if (activeTab === 'agriculture') {
+    childComponent = <Agriculture/>
+  } else if (activeTab === 'cooperative') {
+    childComponent = <Cooperative/>
+  } else if (activeTab === 'bus_shelter_services') {
+    childComponent = <BusShelter/>
+  } else if (activeTab === 'ambulance') {
+    childComponent = <Ambulance/>
+  } else if (activeTab === 'certificates') {
+    childComponent = <Certificates/>
+  } else if (activeTab === 'others') {
+    childComponent = <Other/>
+  } else if (activeTab === 'large') {
+    childComponent = <Large/>
+  } else if (activeTab === 'small') {
+    childComponent = <Small/>
+  } else if (activeTab === 'tenancy_application') {
+    childComponent = <TenancyApplication/>
+  } else if (activeTab === 'tenancy_transfer') {
+    childComponent = <TenancyTransfer/>
+  } else if (activeTab === 'market') {
+    childComponent = <Market/>
+  } else if (activeTab === 'transport') {
+    childComponent = <Transport/>
+  } else if (activeTab === 'hire_grounds') {
+    childComponent = <HireGrounds/>
+  } else if (activeTab === 'hire_halls') {
+    childComponent = <HireHalls/>
+  } else if (activeTab === 'hire_schools') {
+    childComponent = <HireSchool/>
+  } else if (activeTab === 'hire_equipment') {
+    childComponent = <HireEquipment/>
+  } else if (activeTab === 'hire_stadium') {
+    childComponent = <HireStadium/>
+  } else if (activeTab === 'jitambue') {
+    childComponent = <ValidateStaff/>
   } else {
     // handle invalid `id` parameter
     childComponent = <Landing />
