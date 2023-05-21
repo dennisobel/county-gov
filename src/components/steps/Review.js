@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useStepperContext } from "../../contexts/StepperContext";
 import { useSelector, useDispatch } from 'react-redux';
 import { updateReviewAccept } from "../../state";
+import { useEffect } from "react";
 
 export default function ReviewAccept() {
   const { userData, setUserData } = useStepperContext();
@@ -64,8 +65,6 @@ export default function ReviewAccept() {
     setIsAccordionOpen(newAccordionOpen);
   };
 
-  
-
   const handleChange = (event) => {
     const { name, checked } = event.target;
     setIsChecked(checked)
@@ -73,7 +72,9 @@ export default function ReviewAccept() {
     dispatch(updateReviewAccept({ [name]: checked }));
   };
 
-  
+  useEffect(() => {
+    console.log("STATE:",state)
+  },[])
 
   return (
     <>

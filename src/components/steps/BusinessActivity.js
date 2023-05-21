@@ -1,11 +1,27 @@
 import { useStepperContext } from "../../contexts/StepperContext";
+import { useDispatch } from "react-redux";
+import { setSingleBusinessData } from "../../state";
+import { useEffect, useState } from "react";
 
 export default function BusinessActivity() {
   const { userData, setUserData } = useStepperContext();
+  const [formValues,setFormValues] = useState({
+    business_category:"",
+    business_sub_category:"",
+    business_description: "",
+    no_of_employees: "",
+    additional_activity: "",
+    premise_size: ""
+  })
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
+    // const { name, value } = e.target;
+    // setUserData({ ...userData, [name]: value });
+    e.preventDefault()
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
   };
   return (
     <>
@@ -17,63 +33,30 @@ export default function BusinessActivity() {
       <div className="flex flex-col md:flex-row">
         <div className="w-full mx-2 flex-1">
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase mb-1">
-            Select business category
+            business category
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
-            <select
+          <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
+            <input
               onChange={handleChange}
-              value={userData["applicationType"] || ""}
-              name="subcounty"
-              className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
-            >
-              <option value="web">Select business category</option>
-              <option value="mobile">Hospitality</option>
-            </select>
-            <div className="absolute right-0 top-0 bottom-0 w-8 flex items-center justify-center pointer-events-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M14.293 7.293a1 1 0 0 0-1.414-1.414L10 8.586 6.121 4.707a1 1 0 0 0-1.414 1.414l4.95 4.95a1 1 0 0 0 1.414 0l4.95-4.95a1 1 0 0 0 0-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
+              value={formValues["business_category"] || ""}
+              name="business_category"
+              placeholder="Health"
+              className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
+            />
           </div>
         </div>
         <div className="w-full mx-2 flex-1">
           <div className="font-bold h-6 mt-3 text-gray-500 text-xs leading-8 uppercase">
-            Select business sub-category
+            business sub-category
           </div>
-          <div className="my-2 flex rounded border border-gray-200 bg-white relative">
-            <select
+          <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
+            <input
               onChange={handleChange}
-              value={userData["applicationType"] || ""}
-              name="subcounty"
-              className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
-            >
-              <option value="web">Select business sub-category</option>
-              <option value="mobile">Hotel</option>
-              <option value="mobile">Bed & Breakfast</option>
-            </select>
-            <div className="absolute right-0 top-0 bottom-0 w-8 flex items-center justify-center pointer-events-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                className="w-4 h-4"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M14.293 7.293a1 1 0 0 0-1.414-1.414L10 8.586 6.121 4.707a1 1 0 0 0-1.414 1.414l4.95 4.95a1 1 0 0 0 1.414 0l4.95-4.95a1 1 0 0 0 0-1.414z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </div>
+              value={formValues["business_sub_category"] || ""}
+              name="business_sub_category"
+              placeholder="Clinic"
+              className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
+            />
           </div>
         </div>
       </div>
@@ -86,8 +69,8 @@ export default function BusinessActivity() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <textarea
               onChange={handleChange}
-              value={userData["businessDescription"] || ""}
-              name="businessDescription"
+              value={formValues["business_description"] || ""}
+              name="business_description"
               placeholder="Enter business description"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -103,8 +86,8 @@ export default function BusinessActivity() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["card"] || ""}
-              name="card"
+              value={formValues["no_of_employees"] || ""}
+              name="no_of_employees"
               placeholder="0"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -120,8 +103,8 @@ export default function BusinessActivity() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["card"] || ""}
-              name="card"
+              value={formValues["additional_activity"] || ""}
+              name="additional_activity"
               placeholder="Additional activity"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -137,8 +120,8 @@ export default function BusinessActivity() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["exp"] || ""}
-              name="exp"
+              value={formValues["premise_size"] || ""}
+              name="premise_size"
               placeholder="Premises Size (Area)"
               type="text"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"

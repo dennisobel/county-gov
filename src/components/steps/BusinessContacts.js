@@ -1,12 +1,34 @@
 import { useStepperContext } from "../../contexts/StepperContext";
+import { useDispatch } from "react-redux";
+import { setSingleBusinessData } from "../../state";
+import { useEffect, useState } from "react";
 
 export default function BusinessContacts() {
   const { userData, setUserData } = useStepperContext();
+  const dispatch = useDispatch()
+  const [formValues,setFormValues] = useState({
+    business_email:"",
+    business_phone:"",
+    postal_address: "",
+    postal_code: "",
+    contact_person_id: "",
+    contact_person_role: "",
+    contact_person_name: "",
+    contact_person_email: "",
+    contact_person_phone: ""
+  })
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
+    e.preventDefault()
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  useEffect(()=>{
+    dispatch(setSingleBusinessData(formValues))
+  },[formValues])
 
   return (
     <>
@@ -24,8 +46,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["email"] || ""}
-              name="email"
+              value={formValues["business_email"] || ""}
+              name="business_email"
               placeholder="Enter email address"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -38,8 +60,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["phonenumber"] || ""}
-              name="phonenumber"
+              value={formValues["business_phone"] || ""}
+              name="business_phone"
               placeholder="Enter phone number"
               type="text"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -56,8 +78,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["address"] || ""}
-              name="address"
+              value={formValues["postal_address"] || ""}
+              name="postal_address"
               placeholder="Enter postal address"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -70,8 +92,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["postalcode"] || ""}
-              name="postalcode"
+              value={formValues["postal_code"] || ""}
+              name="postal_code"
               placeholder="Enter postal code"
               type="text"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -95,8 +117,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["id"] || ""}
-              name="id"
+              value={formValues["contact_person_id"] || ""}
+              name="contact_person_id"
               placeholder="eg 27912653"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -109,8 +131,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["role"] || ""}
-              name="role"
+              value={formValues["contact_person_role"] || ""}
+              name="contact_person_role"
               placeholder="Role of contact person"
               type="text"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -127,8 +149,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["firstname"] || ""}
-              name="firstname"
+              value={formValues["contact_person_name"] || ""}
+              name="contact_person_name"
               placeholder="eg John Doe"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -144,8 +166,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["contactpersonEmail"] || ""}
-              name="contactpersonEmail"
+              value={formValues["contact_person_email"] || ""}
+              name="contact_person_email"
               placeholder="eg john.doe@mail.com"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />
@@ -158,8 +180,8 @@ export default function BusinessContacts() {
           <div className="bg-white my-2 p-1 flex border border-gray-200 rounded">
             <input
               onChange={handleChange}
-              value={userData["contactpersonNumber"] || ""}
-              name="contactpersonNumber"
+              value={formValues["contact_person_phone"] || ""}
+              name="contact_person_phone"
               placeholder="eg 0712345678"
               className="p-1 px-2 appearance-none outline-none w-full text-gray-800"
             />

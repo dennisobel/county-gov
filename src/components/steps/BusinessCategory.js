@@ -1,12 +1,31 @@
 import { useStepperContext } from "../../contexts/StepperContext";
+import { useDispatch } from "react-redux";
+import { setSingleBusinessData } from "../../state";
+import { useEffect, useState } from "react";
 
 export default function BusinessCategory() {
   const { userData, setUserData } = useStepperContext();
+  const dispatch = useDispatch()
+  const [formValues,setFormValues] = useState({
+    applicationType:"",
+    registered:""
+  })
+
+  
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUserData({ ...userData, [name]: value });
+    // const { name, value } = e.target;
+    // setUserData({ ...userData, [name]: value });
+    e.preventDefault()
+    setFormValues({
+      ...formValues,
+      [e.target.name]: e.target.value,
+    });
   };
+
+  useEffect(()=>{
+    dispatch(setSingleBusinessData(formValues))
+  },[formValues])
 
   return (
     <>
@@ -23,12 +42,13 @@ export default function BusinessCategory() {
           <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
-              value={userData["applicationType"] || ""}
+              value={formValues["applicationType"] || ""}
               name="applicationType"
               className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
             >
-              <option value="web">New</option>
-              <option value="mobile">Ammendment</option>
+              <option value="">Choose Application Type</option>
+              <option value="new">New</option>
+              <option value="ammendment">Ammendment</option>
             </select>
             <div className="absolute right-0 top-0 bottom-0 w-8 flex items-center justify-center pointer-events-none">
               <svg
@@ -54,12 +74,13 @@ export default function BusinessCategory() {
           <div className="my-2 flex rounded border border-gray-200 bg-white relative">
             <select
               onChange={handleChange}
-              value={userData["applicationType"] || ""}
-              name="applicationType"
+              value={formValues["registered"] || ""}
+              name="registered"
               className="w-full appearance-none p-1 px-2 text-gray-800 outline-none"
             >
-              <option value="web">Yes</option>
-              <option value="mobile">No</option>
+              <option value="">Registered</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
             </select>
             <div className="absolute right-0 top-0 bottom-0 w-8 flex items-center justify-center pointer-events-none">
               <svg

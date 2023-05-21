@@ -16,6 +16,10 @@ const initialSignupState = {
   login:{}
 };
 
+const initialSingleBusinessState = {
+  singleBusinessData:{}
+}
+
 const initialOTPState = {
   userData: {
     otp: {
@@ -26,6 +30,18 @@ const initialOTPState = {
   error: null,
   success: false,
 }
+
+const singleBusinessPermitSlice = createSlice({
+  name: "businesspermit",
+  initialState: initialSingleBusinessState,
+  reducers: {
+    setSingleBusinessData: (state,action) => {
+      state.singleBusinessData = {
+        ...state.singleBusinessData, ...action.payload
+      }
+    }
+  }
+})
 
 const multiStepSignupSlice = createSlice({
   name: "signup",
@@ -82,6 +98,8 @@ const otpSlice = createSlice({
   }
 })
 
+export const {setSingleBusinessData} = singleBusinessPermitSlice.actions
+
 export const {
   updatePersonalInformation,
   updateIdentification,
@@ -97,7 +115,8 @@ export const {
 
 const rootReducer = combineReducers({
   multiStepSignup: multiStepSignupSlice.reducer,
-  otp: otpSlice.reducer
+  otp: otpSlice.reducer,
+  singleBusinessPermit: singleBusinessPermitSlice.reducer
 });
 
 export default rootReducer

@@ -113,3 +113,12 @@ export async function resetPassword({ email, password }){
         return Promise.reject({ error })
     }
 }
+
+export async function createBusinessPermit(data) {
+    try {
+        const res = await axios.post('/business/register', data)
+        return Promise.resolve(res)
+    } catch (error) {
+        return Promise.reject({ error })
+    }
+}
