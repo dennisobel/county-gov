@@ -13,6 +13,7 @@ const initialSignupState = {
   loading: false,
   error: null,
   success: false,
+  login:{}
 };
 
 const initialOTPState = {
@@ -59,6 +60,11 @@ const multiStepSignupSlice = createSlice({
         ...state.userData.reviewAccept,
         ...action.payload,
       };
+    },
+    setLogin: (state,action) => {
+      state.login = {
+        ...state.login, ...action.payload
+      }
     }
   },
 });
@@ -82,6 +88,7 @@ export const {
   updateAccountInformation,
   updateLocationRole,
   updateReviewAccept,
+  setLogin
 } = multiStepSignupSlice.actions;
 
 export const {

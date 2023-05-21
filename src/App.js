@@ -2,13 +2,16 @@ import { Route, Routes, createBrowserRouter, RouterProvider, Outlet, Navigate } 
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home"
 import SingleBusinessPermitReg from "./components/steps/SingleBusinessPermitReg";
-import Signup from "./pages/signup/Signup";
-import Login from "./pages/login/Login"
+// import Signup from "./pages/signup/Signup";
+import Signup from "./components/Signup"
+// import Login from "./pages/login/Login"
+import Login from "./components/Login"
 import PassResetRequest from "./pages/forgot_pass/PassResetRequest";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
 // import Otp from "./pages/otp/otp";
-import Otp from "./pages/signup/pin"
+// import Otp from "./pages/signup/pin"
+import Otp from "./components/Otp"
 import Reset from "./pages/password_reset/Reset";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Contact";

@@ -43,7 +43,8 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
           currentStep === 5 &&
           !state.global.multiStepSignup.userData.reviewAccept.terms
         }
-        onClick={() => handleClick("next")}
+        // onClick={() => handleClick("next")}
+        onClick={() => handleClick(currentStep === steps.length - 1 ? "Confirm" : "Next")}
         className={`rounded-lg py-2 px-4 font-semibold uppercase transition duration-200 ease-in-out
               ${
                 (currentStep === 5 &&

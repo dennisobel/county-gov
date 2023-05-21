@@ -9,19 +9,6 @@ import BusinessContacts from "../../steps/BusinessContacts";
 import Review from "../../steps/Review";
 import Final from "../../steps/Final"
 
-const features = [
-    {
-        id: 1,
-        icon: "bone",
-        title: "pet friendly",
-    },
-    {
-        id: 2,
-        icon: "bone",
-        title: "pet friendly",
-    },
-];
-
 function SingleBisinessPermit(props) {
     const [files, setFiles] = useState([]);
     const { getRootProps, getInputProps } = useDropzone({
