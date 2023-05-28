@@ -39,6 +39,9 @@ function Signup() {
       console.log("VALUES:", formValues)
       let registerPromise = registerUser(formValues)
       registerPromise.then(function () { navigate('/login') });
+      setTimeout(() => {
+        navigate("/login");
+      }, 2000);
     }
   }
 

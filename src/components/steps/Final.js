@@ -15,10 +15,9 @@ export default function Final() {
   useEffect(() => {
     let permitPromise = createBusinessPermit(data);
     permitPromise.then((res) => {
-      console.log("RESPONSE:", res);
       setdisplaySuccess(true);
     });
-  }, [data]);
+  }, []);
 
   return (
     <div className="container md:mt-10">

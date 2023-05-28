@@ -8,9 +8,13 @@ import BusinessActivity from "../../steps/BusinessActivity";
 import BusinessContacts from "../../steps/BusinessContacts";
 import Review from "../../steps/Review";
 import Final from "../../steps/Final"
+import { useDispatch } from "react-redux";
+import { setSingleBusinessData } from "../../../state";
 
 function SingleBisinessPermit(props) {
     const [files, setFiles] = useState([]);
+    const dispatch = useDispatch()
+
     const { getRootProps, getInputProps } = useDropzone({
         accept: "image/*",
         onDrop: (acceptedFiles) => {
@@ -31,6 +35,17 @@ function SingleBisinessPermit(props) {
             </div>
         </div>
     ));
+
+    const getUserLocation = () => {
+        navigator.geolocation.getCurrentPosition((pstn) => {
+            const {latitude,longitude} = pstn.coords;
+            dispatch(setSingleBusinessData({latitude,longitude}))
+        })
+    }
+
+    useEffect(() => {
+        getUserLocation();
+    }, []);
 
     useEffect(
         () => () => {
